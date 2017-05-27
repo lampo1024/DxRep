@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxRep.Client", "DxRep.Clien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxRep.ServiceFactories", "DxRep.ServiceFactories\DxRep.ServiceFactories.csproj", "{955C2585-CA63-409D-A900-98BD5F36C369}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlSugar", "SqlSugar\SqlSugar.csproj", "{489BB790-226C-4FAD-8D1E-51D72A7FF8E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{955C2585-CA63-409D-A900-98BD5F36C369}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{955C2585-CA63-409D-A900-98BD5F36C369}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{955C2585-CA63-409D-A900-98BD5F36C369}.Release|Any CPU.Build.0 = Release|Any CPU
+		{489BB790-226C-4FAD-8D1E-51D72A7FF8E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{489BB790-226C-4FAD-8D1E-51D72A7FF8E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{489BB790-226C-4FAD-8D1E-51D72A7FF8E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{489BB790-226C-4FAD-8D1E-51D72A7FF8E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

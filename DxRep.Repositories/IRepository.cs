@@ -7,7 +7,8 @@ namespace DxRep.Repositories
         T FindById(int id);
 
         IEnumerable<T> FindAll();
-        IEnumerable<T> FindByClause(int top, string where, string orderBy);
+        //IEnumerable<T> FindByClause(int top, string where, string orderBy);
+        IEnumerable<T> FindByClause(int top, string orderBy, string @where = "");
 
         int Insert(T entity);
 

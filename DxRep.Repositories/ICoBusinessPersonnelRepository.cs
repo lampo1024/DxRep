@@ -1,5 +1,4 @@
 ﻿using DxRep.Domain;
-using DxRep.Infrastructure;
 
 namespace DxRep.Repositories
 {

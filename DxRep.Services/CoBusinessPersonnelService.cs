@@ -35,5 +35,10 @@ namespace DxRep.Services
         {
             throw new System.NotImplementedException();
         }
+
+        public IEnumerable<CoBusinessPersonnel> FindByClause(int top, string @where = "", string orderBy = "")
+        {
+            return _repository.FindByClause(top,@where,orderBy);
+        }
     }
 }

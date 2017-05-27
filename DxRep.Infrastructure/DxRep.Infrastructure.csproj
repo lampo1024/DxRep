@@ -43,12 +43,17 @@
   <ItemGroup>
     <Compile Include="Dba\DbHelperSQL.cs" />
     <Compile Include="Dba\SqlParameterFactory.cs" />
+    <Compile Include="Dba\SugarConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DxRep.Core\DxRep.Core.csproj">
       <Project>{EBE7D4A1-5046-4A2C-9269-7F1D8BB1FA32}</Project>
       <Name>DxRep.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SqlSugar\SqlSugar.csproj">
+      <Project>{489bb790-226c-4fad-8d1e-51d72a7ff8e5}</Project>
+      <Name>SqlSugar</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
