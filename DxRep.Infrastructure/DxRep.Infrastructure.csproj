@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dba\DbHelperSQL.cs" />
+    <Compile Include="Dba\IOrmProvider.cs" />
     <Compile Include="Dba\SqlParameterFactory.cs" />
-    <Compile Include="Dba\SugarConnection.cs" />
+    <Compile Include="Dba\MySqlConnection.cs" />
+    <Compile Include="Dba\SqlServerConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

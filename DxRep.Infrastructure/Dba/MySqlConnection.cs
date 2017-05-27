@@ -1,14 +1,15 @@
 ﻿using System.Configuration;
 using SqlSugar;
+using SqlSugar.Realization.SqlServer;
 
 namespace DxRep.Infrastructure.Dba
 {
     /// <summary>
     /// SqlSugar
     /// </summary>
-    public class SugarConnection
+    public class MySqlConnection
     {
-        private SugarConnection()
+        private MySqlConnection()
         {
 
         }
@@ -16,13 +17,13 @@ namespace DxRep.Infrastructure.Dba
         {
             get
             {
-                var reval = ConfigurationManager.AppSettings["ConnectionString"];
+                var reval = ConfigurationManager.ConnectionStrings["MySQL"].ConnectionString;
                 return reval;
             }
         }
         public static SqlSugarClient GetInstance()
         {
-            var db = new SqlSugarClient(new SystemTableConfig{ ConnectionString = ConnectionString, DbType = DbType.SqlServer, IsAutoCloseConnection = true })
+            var db = new SqlSugarClient(new SystemTableConfig{ ConnectionString = ConnectionString, DbType = DbType.MySql, IsAutoCloseConnection = true })
             {
                 
             };

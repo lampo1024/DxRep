@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using DxRep.Core.Extensions;
 using DxRep.Infrastructure.Dba;
-using SqlSugar;
 
 namespace DxRep.Repositories
 {
@@ -21,7 +20,7 @@ namespace DxRep.Repositories
             var paraPrimaryKey = SqlParameterFactory.GetParameter;
             paraPrimaryKey.ParameterName = "@PrimaryKey";
             paraPrimaryKey.Value = id;
-            paraPrimaryKey.DbType = System.Data.DbType.String;
+            paraPrimaryKey.DbType = DbType.String;
 
             var ds = DbHelperSql.Query(strSql.ToString(), paraPrimaryKey);
             return ds.Tables[0].ToEntity<T>();
@@ -42,7 +41,7 @@ namespace DxRep.Repositories
 
         public virtual IEnumerable<T> FindByClause(int top, string orderBy, string @where = "")
         {
-            using (var db = SugarConnection.GetInstance())
+            using (var db = SqlServerConnection.GetInstance())
             {
                 /*
                 var list = db.Queryable<T>();
