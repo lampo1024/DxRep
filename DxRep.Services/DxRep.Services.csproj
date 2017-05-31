@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GenericService.cs" />
     <Compile Include="PersonService.cs" />
     <Compile Include="CoCooperationApplicationService.cs" />
     <Compile Include="CoBusinessPersonnelService.cs" />
@@ -53,6 +54,10 @@
     <ProjectReference Include="..\DxRep.Domain\DxRep.Domain.csproj">
       <Project>{a3fce219-d9c5-4c9f-835b-d31301a5963c}</Project>
       <Name>DxRep.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DxRep.Infrastructure\DxRep.Infrastructure.csproj">
+      <Project>{59116A0F-1A8D-4005-B74C-29BE7B1FE89C}</Project>
+      <Name>DxRep.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\DxRep.Repositories\DxRep.Repositories.csproj">
       <Project>{4f3426e3-ae32-4c69-a2e3-37ee7680721b}</Project>

@@ -1,18 +1,17 @@
 ﻿using System;
-using SqlSugar;
+using DxRep.Core.Attributes;
 
 namespace DxRep.Domain
 {
     /// <summary>
     /// 合作申请表
     /// </summary>
-    [SugarTable("CoCooperationApplication")]
     public class CoCooperationApplication
     {
         /// <summary>
         /// Id
         /// </summary>
-        [SugarColumn(IsPrimaryKey = true, IsIdentity = true, ColumnName = "Id")]
+        [PrimaryKey]
         public int Id { get; set; }
         /// <summary>
         /// 联系人姓名

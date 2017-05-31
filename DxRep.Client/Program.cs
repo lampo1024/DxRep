@@ -6,8 +6,8 @@ namespace DxRep.Client
     {
         static void Main(string[] args)
         {
-            var test=new Test();
-            test.Run();
+            var test=new SqlServerDemo();
+            test.AssemblyLoad();
             Console.ReadKey();
         }
     }

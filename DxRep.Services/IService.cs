@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DxRep.Infrastructure;
 
 namespace DxRep.Services
 {
@@ -14,6 +15,8 @@ namespace DxRep.Services
         /// <returns></returns>
         IEnumerable<T> FindAll();
 
+        IPagedList<T> FindPagedList(string orderBy, string @where, int pageIndex = 1, int pageSize = 20);
+
         T FindById(int id);
 
         /// <summary>
@@ -21,7 +24,7 @@ namespace DxRep.Services
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        T Insert(T entity);
+        int Insert(T entity);
 
         /// <summary>
         /// 更新数据(泛型)
@@ -29,11 +32,14 @@ namespace DxRep.Services
         /// <param name="entity"></param>
         /// <returns></returns>
         bool Update(T entity);
+
         /// <summary>
         /// 删除数据(泛型)
         /// </summary>
-        /// <param name="entity"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
-        bool Delete(T entity);
+        bool Delete(int id);
+
+        bool Delete(string ids);
     }
 }

@@ -40,10 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PersonServiceFactory.cs" />
-    <Compile Include="CoCooperationApplicationServiceFactory.cs" />
-    <Compile Include="CoBusinessPersonnelServiceFactory.cs" />
+    <Compile Include="InstanceFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DxRep.Repositories\DxRep.Repositories.csproj">

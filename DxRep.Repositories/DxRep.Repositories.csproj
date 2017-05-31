@@ -63,10 +63,6 @@
       <Project>{59116a0f-1a8d-4005-b74c-29be7b1fe89c}</Project>
       <Name>DxRep.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SqlSugar\SqlSugar.csproj">
-      <Project>{489bb790-226c-4fad-8d1e-51d72a7ff8e5}</Project>
-      <Name>SqlSugar</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

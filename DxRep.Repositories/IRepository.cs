@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using DxRep.Domain;
+using DxRep.Infrastructure;
 
 namespace DxRep.Repositories
 {
@@ -9,6 +11,8 @@ namespace DxRep.Repositories
         IEnumerable<T> FindAll();
         //IEnumerable<T> FindByClause(int top, string where, string orderBy);
         IEnumerable<T> FindByClause(int top, string orderBy, string @where = "");
+
+        IPagedList<T> FindPagedList(string orderBy, string @where, int pageIndex = 1,int pageSize = 20);
 
         int Insert(T entity);
 

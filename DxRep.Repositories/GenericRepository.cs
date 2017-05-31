@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Text;
 using DxRep.Core.Extensions;
+using DxRep.Infrastructure;
 using DxRep.Infrastructure.Dba;
 
 namespace DxRep.Repositories
@@ -41,26 +41,29 @@ namespace DxRep.Repositories
 
         public virtual IEnumerable<T> FindByClause(int top, string orderBy, string @where = "")
         {
-            using (var db = SqlServerConnection.GetInstance())
-            {
-                /*
-                var list = db.Queryable<T>();
-                if (!string.IsNullOrEmpty(@where))
-                {
-                    list=list.Where(@where);
-                }
-                list = list.OrderBy(orderBy).Take(top);
-                */
-                var sable = db.Queryable<T>("t");
-                if (!string.IsNullOrEmpty(@where))
-                {
-                    sable = sable.Where(@where);
-                }
-                var totalCount = sable.Count();
-                var list = sable.OrderBy(orderBy).ToPageList(0, 2);
-                return list.ToList();
-            }
+            var type = typeof(T);
+            var propMapping = type.Mapping();
 
+            var dxQueryable = new DxQueryable<T>(propMapping);
+            dxQueryable.Where(@where, new { Id = 3 });
+            dxQueryable.OrderBy(orderBy);
+            var ds = DbHelperSql.Query(dxQueryable.ToSql, dxQueryable.DbParameters.ToArray());
+            return ds.Tables[0].ToList<T>();
+        }
+
+        public virtual IPagedList<T> FindPagedList(string orderBy, string @where, int pageIndex = 1, int pageSize = 20)
+        {
+            var type = typeof(T);
+            var propMapping = type.Mapping();
+
+            var dxQueryable = new DxQueryable<T>(propMapping);
+            dxQueryable.Where(@where, new { Id = 3 });
+            dxQueryable.OrderBy(orderBy);
+            var ds = DbHelperSql.Query(dxQueryable.ToPagingSql(pageIndex, pageSize), dxQueryable.DbParameters.ToArray());
+            var list = ds.Tables[0].ToList<T>();
+            var totalCount = ds.Tables[0].Rows[0]["RowNumTotalCount"];
+            var items = new PagedList<T>(list, pageIndex, pageSize, int.Parse(totalCount.ToString()));
+            return items;
         }
 
         public virtual int Insert(T entity)

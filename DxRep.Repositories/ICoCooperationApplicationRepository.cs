@@ -4,5 +4,6 @@ namespace DxRep.Repositories
 {
     public interface ICoCooperationApplicationRepository : IRepository<CoCooperationApplication>
     {
+        
     }
 }

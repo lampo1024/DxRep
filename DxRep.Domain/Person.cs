@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
-using SqlSugar;
+using DxRep.Core.Attributes;
 
 namespace DxRep.Domain
 {
-    [SugarTable("Person")]
     public class Person
     {
-        [SugarColumn(IsPrimaryKey = true, IsIdentity = true, ColumnName = "Id")]
+        [PrimaryKey]
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -16,7 +15,6 @@ namespace DxRep.Domain
         public DateTime? ModifiedOn { get; set; }
         public int Age { get; set; }
         public decimal Salary { get; set; }
-        [SugarColumn(IsIgnore = true)]
         public IEnumerable<Phone> Phones { get; private set; }
     }
 

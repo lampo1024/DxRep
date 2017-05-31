@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DxRep.Domain;
+using DxRep.Infrastructure;
 
 namespace DxRep.Services
 {

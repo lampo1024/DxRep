@@ -1,6 +1,4 @@
 ﻿using System.Configuration;
-using SqlSugar;
-using SqlSugar.Realization.SqlServer;
 
 namespace DxRep.Infrastructure.Dba
 {
@@ -20,15 +18,6 @@ namespace DxRep.Infrastructure.Dba
                 var reval = ConfigurationManager.AppSettings["ConnectionString"];
                 return reval;
             }
-        }
-        public static SqlSugarClient GetInstance()
-        {
-            var db = new SqlSugarClient(new SystemTableConfig{ ConnectionString = ConnectionString, DbType = DbType.SqlServer, IsAutoCloseConnection = true })
-            {
-                
-            };
-            //Enable log events
-            return db;
         }
     }
 }

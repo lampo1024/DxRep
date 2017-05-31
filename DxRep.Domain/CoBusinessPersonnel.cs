@@ -1,13 +1,11 @@
 ﻿using System;
 using DxRep.Core.Attributes;
-using SqlSugar;
 
 namespace DxRep.Domain
 {
     /// <summary>
     /// 商务信息表
     /// </summary>
-    [SugarTable("CoBusinessPersonnel")]
     public class CoBusinessPersonnel
     {
         /// <summary>
@@ -15,7 +13,6 @@ namespace DxRep.Domain
         /// </summary>
         [EntityTracker(Label = "Id", Description = "Id")]
         [PrimaryKey]
-        [SugarColumn(IsPrimaryKey = true, IsIdentity = true, ColumnName = "Id")]
         public int Id { get; set; }
 
         /// <summary>
