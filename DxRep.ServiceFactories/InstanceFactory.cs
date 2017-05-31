@@ -12,7 +12,7 @@ namespace DxRep.ServiceFactories
 
         static InstanceFactory()
         {
-            var asms = AppDomain.CurrentDomain.GetAssemblies().Where(x => x.FullName.Contains("Repositories")).ToList();
+            var asms = AppDomain.CurrentDomain.GetAssemblies().Where(x => x.Modules.Any(m => m.Name == "DxRep.Services.dll" || m.Name == "DxRep.Repositories.dll")).ToList();
             var cls = asms
                 .SelectMany(t => t.GetTypes())
                 .Where(t => { return t.Namespace != null && !t.IsAbstract && !t.IsGenericType && (t.IsClass && t.Namespace.EndsWith("Repositories")); }).ToList();
